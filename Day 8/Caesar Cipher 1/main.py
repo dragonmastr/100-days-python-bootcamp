@@ -6,6 +6,14 @@ shift = int(input("Type the shift number:\n"))
 
 
 # TODO-1: Create a function called 'encrypt()' that takes 'original_text' and 'shift_amount' as 2 inputs.
+def encrypt(origianl_text,shift_amount):
+    encrypt_text = ""
+    for i in origianl_text:
+        shift_by = alphabet.index(i) + shift_amount
+        shift_by = shift_by % len(alphabet)
+        encrypt_text = encrypt_text + str(alphabet[shift_by])
+    return f"Here's the encrypted text {encrypt_text}"
+
 
 # TODO-2: Inside the 'encrypt()' function, shift each letter of the 'original_text' forwards in the alphabet
 #  by the shift amount and print the encrypted text.
@@ -14,4 +22,5 @@ shift = int(input("Type the shift number:\n"))
 
 # TODO-3: Call the 'encrypt()' function and pass in the user inputs. You should be able to test the code and encrypt a
 #  message.
+print(encrypt(text,shift))
 
